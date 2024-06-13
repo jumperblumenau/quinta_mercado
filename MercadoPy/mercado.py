@@ -13,6 +13,10 @@ def main() -> None:
     menu()
 
 def menu() -> None:
+    """
+
+    :rtype: object
+    """
     print('===================================')
     print('=========== Bem-vindo(a) ==========')
     print('=========== Jumper Shop  ==========')
@@ -26,7 +30,7 @@ def menu() -> None:
     print('5 - Fechar pedido')
     print('6 - Sair do sistema')
 
-    opcao: int = int(input())
+    opcao = int(input())
 
     if opcao == 1:
         cadastrar_produto()
@@ -57,7 +61,7 @@ def cadastrar_produto() -> None:
 
     produto: Produto = Produto(nome, preco)
 
-    produtos.add(produto)
+    produtos.append(produto)
 
     print(f'O produto {produto.nome} foi cadastrado com sucesso!')
     sleep(2)
@@ -72,13 +76,13 @@ def listar_produtos() -> None:
             print('----------------')
             sleep(1)
     else:
-        print(f.'Ainda não existem produtos cadastrados.')
+        print('Ainda não existem produtos cadastrados.')
     sleep(2)
     menu()
 
 
 def comprar_produto() -> None:
-    if len(produto) > 0:
+    if len ('produto') > 0:
         print('Informe o código do produto que deseja adicionar ao carrinho: ')
         print('--------------------------------------------------------------')
         print('================== Produtos Disponíveis ======================')
@@ -91,7 +95,7 @@ def comprar_produto() -> None:
         produto: Produto = pega_produto_por_codigo(codigo)
 
         if produto:
-            if len(carrinhos) > 0:
+            if len(carrinho) > 0:
                 tem_no_carrinho: bool = False
                 for item in carrinho:
                     quant: int = item.get(produto)
