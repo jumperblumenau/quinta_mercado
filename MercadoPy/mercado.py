@@ -37,7 +37,7 @@ def menu() -> None:
     elif opcao == 4:
         visualizar_carrinho()
     elif opcao == 5:
-        fechar_pedido()
+        fechar_pedidos()
     elif opcao == 6:
         print('Volte sempre!')
         sleep(2)
@@ -57,7 +57,7 @@ def cadastrar_produto() -> None:
 
     produto: Produto = Produto(nome, preco)
 
-    produtos.add(produto)
+    produtos.append(produtos)
 
     print(f'O produto {produto.nome} foi cadastrado com sucesso!')
     sleep(2)
@@ -72,13 +72,13 @@ def listar_produtos() -> None:
             print('----------------')
             sleep(1)
     else:
-        print(f.'Ainda não existem produtos cadastrados.')
+        print('Ainda não existem produtos cadastrados.')
     sleep(2)
     menu()
 
 
 def comprar_produto() -> None:
-    if len(produto) > 0:
+    if len(produtos) > 0:
         print('Informe o código do produto que deseja adicionar ao carrinho: ')
         print('--------------------------------------------------------------')
         print('================== Produtos Disponíveis ======================')
@@ -91,7 +91,7 @@ def comprar_produto() -> None:
         produto: Produto = pega_produto_por_codigo(codigo)
 
         if produto:
-            if len(carrinhos) > 0:
+            if len(carrinho) > 0:
                 tem_no_carrinho: bool = False
                 for item in carrinho:
                     quant: int = item.get(produto)
@@ -122,7 +122,7 @@ def comprar_produto() -> None:
     sleep(2)
     menu()
 
-def visualizar_carrinhos() -> None:
+def visualizar_carrinho() -> None:
     if len(carrinho) > 0:
         print('Produtos no carrinho: ')
 
