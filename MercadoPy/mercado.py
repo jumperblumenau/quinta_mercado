@@ -1,6 +1,7 @@
 from typing import List, Dict
 from time import sleep
 
+
 from models.produto import Produto
 from utils.helper import formata_float_str_moeda
 
