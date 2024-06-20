@@ -4,6 +4,7 @@ from time import sleep
 from models.produto import Produto
 from utils.helper import formata_float_str_moeda
 
+
 produtos: List[Produto] = []
 carrinho: List[Dict[Produto, int]] = []
 
@@ -25,7 +26,7 @@ def menu() -> None:
     print('5 - Fechar pedido')
     print('6 - Sair do sistema')
 
-    opcao: int = int(input())
+    opcao: int = int(input('Digite o número da opção: '))
 
     if opcao == 1:
         cadastrar_produto()
