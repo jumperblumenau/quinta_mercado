@@ -155,8 +155,8 @@ def fechar_pedidos() -> None:
         sleep(5)
     else:
         print('Ainda não existem produtos no carrinho.')
-    sleep(2)
-    menu()
+        sleep(2)
+        menu()
 
 def pega_produto_por_codigo(codigo: str) -> Produto:
     p: Produto = None
