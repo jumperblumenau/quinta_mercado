@@ -4,6 +4,10 @@ from time import sleep
 from models.produto import Produto
 from utils.helper import formata_float_str_moeda
 
+from datetime import datetime
+
+dt_hr_at = datetime.now()
+dt_at = dt_hr_at.strftime('%d/%m/%Y %H:%M:%S')
 
 produtos: List[Produto] = []
 carrinho: List[Dict[Produto, int]] = []
@@ -17,6 +21,8 @@ def menu() -> None:
     print('=========== Bem-vindo(a) ==========')
     print('=========== Jumper Shop  ==========')
     print('===================================')
+    print('=======',(dt_at),'=======')
+    print('===================================')
 
     print('Selecione uma opção abaixo: ')
     print('1 - Cadastrar produto')
@@ -25,6 +31,7 @@ def menu() -> None:
     print('4 - Visualizar carrinho')
     print('5 - Fechar pedido')
     print('6 - Sair do sistema')
+    print('Digite sua ação: ')
 
     opcao: int = int(input())
 
@@ -53,11 +60,11 @@ def cadastrar_produto() -> None:
     print('===================')
 
     nome: str = input('Informe o nome do produto: ')
-    preco: float = int(input('Informe o preço do produto: '))
+    preco: float = float(input('Informe o preço do produto: '))
 
     produto: Produto = Produto(nome, preco)
 
-    produtos.append(produtos)
+    produtos.append(produto)
 
     print(f'O produto {produto.nome} foi cadastrado com sucesso!')
     sleep(2)
@@ -68,14 +75,13 @@ def listar_produtos() -> None:
         print('Listagem de produtos')
         print('--------------------')
         for produto in produtos:
-            print(produto)
+            print(f'Nome: {produto.nome} | Preço: {produto.preco}')
             print('----------------')
             sleep(1)
     else:
         print('Ainda não existem produtos cadastrados.')
     sleep(2)
     menu()
-
 
 def comprar_produto() -> None:
     if len(produtos) > 0:
